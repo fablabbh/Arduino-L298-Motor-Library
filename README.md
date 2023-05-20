@@ -192,4 +192,4 @@ void loop() {
 
 ## License
 
-This library is licensed under the MIT License. See the `LICENSE` file for more details.
+This library is licensed under the GNU GENERAL PUBLIC LICENSE. See the `LICENSE` file for more details.
