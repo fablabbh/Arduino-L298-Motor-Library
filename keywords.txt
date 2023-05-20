@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-Motor           KEYWORD1
+FABLAB_L298_Driver      KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)

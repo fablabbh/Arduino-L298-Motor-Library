@@ -4,7 +4,7 @@
   This example shows how to set the minimum and maximum speeds of the motor using the setMin() and setMax() methods. The motor will move forward and backward at different speeds within the set limits.
 */
 
-#include <Motor.h>
+#include <FABLAB_L298_Driver.h>
 
 // Motor pins
 const uint8_t ENA_PIN = 5;
@@ -12,7 +12,7 @@ const uint8_t IN1_PIN = 6;
 const uint8_t IN2_PIN = 7;
 
 // Create a new instance of the Motor class
-Motor motor(ENA_PIN, IN1_PIN, IN2_PIN);
+FABLAB_L298_Driver motor(ENA_PIN, IN1_PIN, IN2_PIN);
 
 void setup() {
 

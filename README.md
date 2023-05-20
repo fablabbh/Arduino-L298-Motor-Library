@@ -1,6 +1,6 @@
 # Motor Library for Arduino
 
-This is a small library for controlling a motor using the L298 H-Bridge chip on an Arduino board. It provides an easy-to-use interface for controlling the speed and direction of the motor.
+This is a small library for controlling a motor using the L298 H-Bridge chip on an Arduino board. It provides an easy-to-use interface for controlling the speed and direction of the FABLAB_L298_Driver.
 
 ## About
 
@@ -18,14 +18,14 @@ We offer different versions of the library to suit your needs and make it easy f
 
 ## Installation
 
-To use this library, simply download the `Motor.h` and `Motor.cpp` files and place them in your Arduino sketchbook library folder. Alternatively, you can download the repository and extract the files to your sketchbook library folder.
+To use this library, simply download the `FABLAB_L298_Driver.h` and `FABLAB_L298_Driver.cpp` files and place them in your Arduino sketchbook library folder. Alternatively, you can download the repository and extract the files to your sketchbook library folder.
 
 ## Usage
 
-To use the Motor library in your Arduino sketch, you need to include the `Motor.h` header file:
+To use the Motor library in your Arduino sketch, you need to include the `FABLAB_L298_Driver.h` header file:
 
 ```c++
-#include <Motor.h>
+#include <FABLAB_L298_Driver.h>
 ```
 
 Then, create a new instance of the Motor class and specify the pins used to control the motor:
@@ -47,34 +47,34 @@ The Motor class provides the following methods:
 
 ### `begin()`
 
-This method initializes the pins used to control the motor. It should be called once in the `setup()` function of your Arduino sketch.
+This method initializes the pins used to control the FABLAB_L298_Driver. It should be called once in the `setup()` function of your Arduino sketch.
 
 ```c++
-motor.begin();
+FABLAB_L298_Driver.begin();
 ```
 
 ### `setMin()`
 
-This method sets the minimum speed of the motor. The default minimum speed is 0.
+This method sets the minimum speed of the FABLAB_L298_Driver. The default minimum speed is 0.
 
 ```c++
-motor.setMin(50); // Set the minimum speed to 50
+FABLAB_L298_Driver.setMin(50); // Set the minimum speed to 50
 ```
 
 ### `setMax()`
 
-This method sets the maximum speed of the motor. The default maximum speed is 255.
+This method sets the maximum speed of the FABLAB_L298_Driver. The default maximum speed is 255.
 
 ```c++
-motor.setMax(200); // Set the maximum speed to 200
+FABLAB_L298_Driver.setMax(200); // Set the maximum speed to 200
 ```
 
 ### `invert()`
 
-This method inverts the direction of the motor. It is useful when the motor is mounted in reverse.
+This method inverts the direction of the FABLAB_L298_Driver. It is useful when the motor is mounted in reverse.
 
 ```c++
-motor.invert(); // Invert the direction of the motor
+FABLAB_L298_Driver.invert(); // Invert the direction of the motor
 ```
 
 ### `forward()`
@@ -82,7 +82,7 @@ motor.invert(); // Invert the direction of the motor
 This method sets the direction of the motor to forward.
 
 ```c++
-motor.forward(); // Set the direction of the motor to forward
+FABLAB_L298_Driver.forward(); // Set the direction of the motor to forward
 ```
 
 ### `backward()`
@@ -90,7 +90,7 @@ motor.forward(); // Set the direction of the motor to forward
 This method sets the direction of the motor to backward.
 
 ```c++
-motor.backward(); // Set the direction of the motor to backward
+FABLAB_L298_Driver.backward(); // Set the direction of the motor to backward
 ```
 
 ### `goMin()`
@@ -98,7 +98,7 @@ motor.backward(); // Set the direction of the motor to backward
 This method sets the speed of the motor to the minimum speed.
 
 ```c++
-motor.goMin(); // Set the speed of the motor to the minimum speed
+FABLAB_L298_Driver.goMin(); // Set the speed of the motor to the minimum speed
 ```
 
 ### `goMax()`
@@ -106,7 +106,7 @@ motor.goMin(); // Set the speed of the motor to the minimum speed
 This method sets the speed of the motor to the maximum speed.
 
 ```c++
-motor.goMax(); // Set the speed of the motor to the maximum speed
+FABLAB_L298_Driver.goMax(); // Set the speed of the motor to the maximum speed
 ```
 
 ### `goSpeed()`
@@ -114,7 +114,7 @@ motor.goMax(); // Set the speed of the motor to the maximum speed
 This method sets the speed of the motor to a user-defined value between the minimum and maximum speeds.
 
 ```c++
-motor.goSpeed(100); // Set the speed of the motor to 100
+FABLAB_L298_Driver.goSpeed(100); // Set the speed of the motor to 100
 ```
 
 ### `goPercentage()`
@@ -122,7 +122,7 @@ motor.goSpeed(100); // Set the speed of the motor to 100
 This method moves the motor with a percentage between the minimum and maximum speeds, where minimum speed is 1% and maximum speed is 100%, and stopping is 0%.
 
 ```c++
-motor.goPercentage(50); // Move the motor at 50% of the maximum speed
+FABLAB_L298_Driver.goPercentage(50); // Move the motor at 50% of the maximum speed
 ```
 
 ### `goOverride()`
@@ -130,7 +130,7 @@ motor.goPercentage(50); // Move the motor at 50% of the maximum speed
 This method overrides the motor speed regardless of minimum and maximum constraints.
 
 ```c++
-motor.goOverride(128); // Set the motor speed to 128
+FABLAB_L298_Driver.goOverride(128); // Set the motor speed to 128
 ```
 
 ### `stop()`
@@ -138,7 +138,7 @@ motor.goOverride(128); // Set the motor speed to 128
 This method stops the motor by setting the enable pin to low.
 
 ```c++
-motor.stop(); // Stop the motor
+FABLAB_L298_Driver.stop(); // Stop the motor
 ```
 
 ### `command()`
@@ -146,7 +146,7 @@ motor.stop(); // Stop the motor
 This method is used to control the motor using serial input. It prompts the user to enter a PWM value and sets the motor speed accordingly. To exit the command function, enter "EXIT", "Exit", or "exit" as the input value.
 
 ```c++
-motor.command(Serial); // Control the motor using serial input
+FABLAB_L298_Driver.command(Serial); // Control the motor using serial input
 ```
 
 ## Example
@@ -154,7 +154,7 @@ motor.command(Serial); // Control the motor using serial input
 Here's an example Arduino sketch that demonstrates how to use the Motor library to control a motor:
 
 ```c++
-#include <Motor.h>
+#include <FABLAB_L298_Driver.h>
 
 // Motor pins
 const uint8_t ENA_PIN = 5;
@@ -166,26 +166,26 @@ Motor motor(ENA_PIN, IN1_PIN, IN2_PIN);
 
 void setup() {
   // Initialize the motor
-  motor.begin();
+  FABLAB_L298_Driver.begin();
 }
 
 void loop() {
   // Move the motor forward at 50% speed
-  motor.forward();
-  motor.goPercentage(50);
+  FABLAB_L298_Driver.forward();
+  FABLAB_L298_Driver.goPercentage(50);
   delay(5000);
 
   // Stop the motor
-  motor.stop();
+  FABLAB_L298_Driver.stop();
   delay(1000);
 
   // Move the motor backward at 75% speed
-  motor.backward();
-  motor.goPercentage(75);
+  FABLAB_L298_Driver.backward();
+  FABLAB_L298_Driver.goPercentage(75);
   delay(5000);
 
   // Stop the motor
-  motor.stop();
+  FABLAB_L298_Driver.stop();
   delay(1000);
 }
 ```

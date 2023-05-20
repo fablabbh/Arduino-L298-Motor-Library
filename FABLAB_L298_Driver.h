@@ -4,11 +4,11 @@
 	MIT licensed.
 */
 
-#ifndef L298_Motor_Driver_h
-#define L298_Motor_Driver_h
+#ifndef FABLAB_L298_Driver_h
+#define FABLAB_L298_Driver_h
 #include "Arduino.h"
 
-class L298_Motor_Driver {
+class FABLAB_L298_Driver {
 
 private:
 
@@ -31,7 +31,7 @@ private:
 public:
 
 	// Constructor With Parameter
-	L298_Motor_Driver(uint8_t enable, uint8_t in1, uint8_t in2);
+	FABLAB_L298_Driver(uint8_t enable, uint8_t in1, uint8_t in2);
 
 	// Set The Starting Parameters
 	void begin();

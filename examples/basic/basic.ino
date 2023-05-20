@@ -2,7 +2,7 @@
 	Here's an example Arduino sketch that demonstrates how to use the Motor library to control a motor
 */
 
-#include <Motor.h>
+#include <FABLAB_L298_Driver.h>
 
 // Motor pins
 const uint8_t ENA_PIN = 5;
@@ -10,7 +10,7 @@ const uint8_t IN1_PIN = 6;
 const uint8_t IN2_PIN = 7;
 
 // Create a new instance of the Motor class
-Motor motor(ENA_PIN, IN1_PIN, IN2_PIN);
+FABLAB_L298_Driver motor(ENA_PIN, IN1_PIN, IN2_PIN);
 
 void setup() {
   // Initialize the motor
