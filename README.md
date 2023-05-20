@@ -4,7 +4,7 @@ This is a small library for controlling a motor using the L298 H-Bridge chip on 
 
 ## About
 
-This library was created by FabLab Bahrain and is maintained by Ghassan Yusuf. FabLab Bahrain is a community-driven makerspace that provides access to tools and resources for people to learn, create, and innovate. To learn more about FabLab Bahrain, visit their website at [www.fablabbahrain.com](https://www.fablabbahrain.com/).
+This library was created by FabLab Bahrain and is maintained by Ghassan Yusuf. FabLab Bahrain is a community-driven makerspace that provides access to tools and resources for people to learn, create, and innovate. To learn more about FabLab Bahrain, visit their website at [fablab.bh](https://fablab.bh).
 
 ## Motivation
 
