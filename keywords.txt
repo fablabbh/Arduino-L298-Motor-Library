@@ -1,0 +1,33 @@
+#######################################
+# Syntax Coloring Map for Debounce library
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Motor           KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin           KEYWORD2
+setMin          KEYWORD2
+setMax          KEYWORD2
+invert          KEYWORD2
+forward         KEYWORD2
+backward        KEYWORD2
+goMin           KEYWORD2
+goMax           KEYWORD2
+goSpeed         KEYWORD2
+goPercentage    KEYWORD2
+goOverride      KEYWORD2
+stop            KEYWORD2
+command         KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+
