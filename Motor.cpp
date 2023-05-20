@@ -98,7 +98,7 @@ void Motor::goPercentage(uint8_t percentage) {
 	// Make Sure You Are Between The Limits
 	percentage = map(percentage, 1, 100, _min_speed, _max_speed);
 	// Analog 
-	checkWrite(speed);
+	checkWrite(percentage);
 }
 
 // Motor Speed
