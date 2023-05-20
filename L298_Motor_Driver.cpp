@@ -4,18 +4,18 @@
 	MIT licensed.
 */
 
-#include "Motor.h"
+#include "L298_Motor_Driver.h"
 #include <Arduino.h>
 
 // Constructor With Parameter
-Motor::Motor(uint8_t enable, uint8_t in1, uint8_t in2) {
+L298_Motor_Driver::L298_Motor_Driver(uint8_t enable, uint8_t in1, uint8_t in2) {
 	_ena_pin  = enable;
 	_in1_pin  = in1;
 	_in2_pin  = in2;
 }
 
 // Set The Starting Parameters
-void Motor::begin() {
+void L298_Motor_Driver::begin() {
 	pinMode(_ena_pin, OUTPUT);
 	pinMode(_in1_pin, OUTPUT);
 	pinMode(_in2_pin, OUTPUT);
@@ -26,7 +26,7 @@ void Motor::begin() {
 }
 
 // To Check The Value Before Writing To the Motor
-void Motor::checkWrite(uint8_t value) {
+void L298_Motor_Driver::checkWrite(uint8_t value) {
 	if(_speed != value) {
 		_speed = value;
 		analogWrite(_ena_pin, _speed);
@@ -34,22 +34,22 @@ void Motor::checkWrite(uint8_t value) {
 }
 
 // Set Minimum Speed
-void Motor::setMin(uint8_t value) {
+void L298_Motor_Driver::setMin(uint8_t value) {
 	_min_speed = value;
 }
 
 // Set Maximum Speed
-void Motor::setMax(uint8_t value) {
+void L298_Motor_Driver::setMax(uint8_t value) {
 	_max_speed = value;
 }
 
 // Invert Motor Direction
-void Motor::invert() {
+void L298_Motor_Driver::invert() {
 	_invert = !_invert;
 }
 
 // Move Forword
-void Motor::forward() {
+void L298_Motor_Driver::forward() {
 	if(_invert == false) {
 		digitalWrite(_in1_pin, LOW);
 		digitalWrite(_in2_pin, HIGH);
@@ -60,7 +60,7 @@ void Motor::forward() {
 }
 
 // Move Backword
-void Motor::backward() {
+void L298_Motor_Driver::backward() {
 	if(_invert == false) {
 		digitalWrite(_in1_pin, HIGH);
 		digitalWrite(_in2_pin, LOW);
@@ -71,17 +71,17 @@ void Motor::backward() {
 }
 
 // Motor Speed
-void Motor::goMin() {
+void L298_Motor_Driver::goMin() {
 	checkWrite(_min_speed);
 }
 
 // Motor Speed
-void Motor::goMax() {
+void L298_Motor_Driver::goMax() {
 	checkWrite(_max_speed);
 }
 
 // Motor Speed
-void Motor::goSpeed(uint8_t speed) {
+void L298_Motor_Driver::goSpeed(uint8_t speed) {
 	// Make Sure You Are Between The Limits
 	speed = constrain(speed, _min_speed, _max_speed);
 	// Analog 
@@ -89,7 +89,7 @@ void Motor::goSpeed(uint8_t speed) {
 }
 
 // Motor Speed
-void Motor::goPercentage(uint8_t percentage) {
+void L298_Motor_Driver::goPercentage(uint8_t percentage) {
 	// Stop The Motor
 	if(percentage == 0) {
 		// Stops the Motor
@@ -102,18 +102,18 @@ void Motor::goPercentage(uint8_t percentage) {
 }
 
 // Motor Speed
-void Motor::goOverride(uint8_t value) {
+void L298_Motor_Driver::goOverride(uint8_t value) {
 	// Stop The Motor
 	analogWrite(_ena_pin, value);
 }
 
 // Press Break
-void Motor::stop() {
+void L298_Motor_Driver::stop() {
 	checkWrite(0);
 }
 
 // Command By Serial
-unsigned int Motor::command(Stream &serial) {
+unsigned int L298_Motor_Driver::command(Stream &serial) {
 
 	// Data Buffer
 	unsigned int lastTriedValue = 0;

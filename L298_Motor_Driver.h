@@ -4,11 +4,11 @@
 	MIT licensed.
 */
 
-#ifndef Motor_h
-#define Motor_h
+#ifndef L298_Motor_Driver_h
+#define L298_Motor_Driver_h
 #include "Arduino.h"
 
-class Motor {
+class L298_Motor_Driver {
 
 private:
 
@@ -31,7 +31,7 @@ private:
 public:
 
 	// Constructor With Parameter
-	Motor(uint8_t enable, uint8_t in1, uint8_t in2);
+	L298_Motor_Driver(uint8_t enable, uint8_t in1, uint8_t in2);
 
 	// Set The Starting Parameters
 	void begin();
