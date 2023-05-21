@@ -1,21 +1,25 @@
 /*
-  Basic Motor Control
-  -------------------
-	Here's an example Arduino sketch that demonstrates how to use the Motor library to control a motor
+  Fablab Bahrain L298 Motor Driver Library
+  ----------------------------------------
+  This library was developed by Fablab Bahrain a community makerspace in Bahrain that provides access to digital fabrication tools and technologies.
+  You can learn more about Fablab Bahrain and its services at https://linktr.ee/fablabbh.
+  
+  About This Example Code
+  -----------------------
+  This is an example Arduino sketch that demonstrates how to use the Fablab Bahrain L298 Motor Driver library to control a motor.
+  
+  About This Library
+  ------------------
+  The library provides an easy-to-use interface for controlling motors using the L298 H-bridge motor driver. The library supports setting the motor speed, direction, and braking.
+  To use this library, you will need an L298N motor driver module. You can find the datasheet for the L298N chip at https://www.st.com/resource/en/datasheet/l298.pdf.
+  You can purchase the L298N module on Amazon at https://www.amazon.com/L298N-Controller-Stepper-Driver-Module/dp/B014KMHSW6.
 
-  Here You Will Fin the Datasheet Of The Chip
-  -------------------------------------------
-  L298 Datasheet        : https://www.st.com/resource/en/datasheet/l298.pdf
-
-  Here You Will Find The Module From Amazone
-  ------------------------------------------
-  L298 Module On Amazon : https://www.amazon.com/L298N-Controller-Stepper-Driver-Module/dp/B014KMHSW6
-
-  You Are Always Welcome To Reach Out To US Via
-  ---------------------------------------------
-  Link Tree             : https://linktr.ee/fablabbh
-  You will fin all our lin above website, socialmedia etc.
-
+  Wiring:
+  -------
+  Connect the following pins on the L298N module to the corresponding pins on your Arduino board:
+    ENA: Connect to a PWM-enabled pin on the Arduino (e.g. pin 5)
+    IN1: Connect to a digital pin on the Arduino (e.g. pin 6)
+    IN2: Connect to a digital pin on the Arduino (e.g. pin 7)
 */
 
 #include <FablabL298Driver.h>
