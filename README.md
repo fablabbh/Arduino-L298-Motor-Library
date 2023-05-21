@@ -1,6 +1,6 @@
 # Motor Library for Arduino
 
-This is a small library for controlling a motor using the L298 H-Bridge chip on an Arduino board. It provides an easy-to-use interface for controlling the speed and direction of the FABLAB_L298_Driver.
+This is a small library for controlling a motor using the L298 H-Bridge chip on an Arduino board. It provides an easy-to-use interface for controlling the speed and direction of the FablabL298Driver.
 
 ## About
 
@@ -18,7 +18,7 @@ We offer different versions of the library to suit your needs and make it easy f
 
 ## Installation
 
-To use this library, simply download the `FablabL298Driver.h` and `FABLAB_L298_Driver.cpp` files and place them in your Arduino sketchbook library folder. Alternatively, you can download the repository and extract the files to your sketchbook library folder.
+To use this library, simply download the `FablabL298Driver.h` and `FablabL298Driver.cpp` files and place them in your Arduino sketchbook library folder. Alternatively, you can download the repository and extract the files to your sketchbook library folder.
 
 ## Usage
 
@@ -47,7 +47,7 @@ The Motor class provides the following methods:
 
 ### `begin()`
 
-This method initializes the pins used to control the FABLAB_L298_Driver. It should be called once in the `setup()` function of your Arduino sketch.
+This method initializes the pins used to control the FablabL298Driver. It should be called once in the `setup()` function of your Arduino sketch.
 
 ```c++
 motor.begin();
@@ -55,7 +55,7 @@ motor.begin();
 
 ### `setMin()`
 
-This method sets the minimum speed of the FABLAB_L298_Driver. The default minimum speed is 0.
+This method sets the minimum speed of the FablabL298Driver. The default minimum speed is 0.
 
 ```c++
 motor.setMin(50); // Set the minimum speed to 50
@@ -63,7 +63,7 @@ motor.setMin(50); // Set the minimum speed to 50
 
 ### `setMax()`
 
-This method sets the maximum speed of the FABLAB_L298_Driver. The default maximum speed is 255.
+This method sets the maximum speed of the FablabL298Driver. The default maximum speed is 255.
 
 ```c++
 motor.setMax(200); // Set the maximum speed to 200
@@ -71,7 +71,7 @@ motor.setMax(200); // Set the maximum speed to 200
 
 ### `invert()`
 
-This method inverts the direction of the FABLAB_L298_Driver. It is useful when the motor is mounted in reverse.
+This method inverts the direction of the FablabL298Driver. It is useful when the motor is mounted in reverse.
 
 ```c++
 motor.invert(); // Invert the direction of the motor
