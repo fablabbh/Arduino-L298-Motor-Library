@@ -18,14 +18,14 @@ We offer different versions of the library to suit your needs and make it easy f
 
 ## Installation
 
-To use this library, simply download the `FABLAB_L298_Driver.h` and `FABLAB_L298_Driver.cpp` files and place them in your Arduino sketchbook library folder. Alternatively, you can download the repository and extract the files to your sketchbook library folder.
+To use this library, simply download the `FablabL298Driver.h` and `FABLAB_L298_Driver.cpp` files and place them in your Arduino sketchbook library folder. Alternatively, you can download the repository and extract the files to your sketchbook library folder.
 
 ## Usage
 
-To use the Motor library in your Arduino sketch, you need to include the `FABLAB_L298_Driver.h` header file:
+To use the Motor library in your Arduino sketch, you need to include the `FablabL298Driver.h` header file:
 
 ```c++
-#include <FABLAB_L298_Driver.h>
+#include <FablabL298Driver.h>
 ```
 
 Then, create a new instance of the Motor class and specify the pins used to control the motor:
@@ -154,7 +154,7 @@ motor.command(Serial); // Control the motor using serial input
 Here's an example Arduino sketch that demonstrates how to use the Motor library to control a motor:
 
 ```c++
-#include <FABLAB_L298_Driver.h>
+#include <FablabL298Driver.h>
 
 // Motor pins
 const uint8_t ENA_PIN = 5;

@@ -4,7 +4,7 @@
 	MIT licensed.
 */
 
-#include "FABLAB_L298_Driver.h"
+#include "FablabL298Driver.h"
 #include <Arduino.h>
 
 // Constructor With Parameter

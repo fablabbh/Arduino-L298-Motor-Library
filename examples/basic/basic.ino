@@ -18,7 +18,7 @@
 
 */
 
-#include <FABLAB_L298_Driver.h>
+#include <FablabL298Driver.h>
 
 // Motor pins
 const uint8_t ENA_PIN = 5;
