@@ -8,14 +8,14 @@
 #include <Arduino.h>
 
 // Constructor With Parameter
-FABLAB_L298_Driver::FABLAB_L298_Driver(uint8_t enable, uint8_t in1, uint8_t in2) {
+FablabL298Driver::FABLAB_L298_Driver(uint8_t enable, uint8_t in1, uint8_t in2) {
 	_ena_pin  = enable;
 	_in1_pin  = in1;
 	_in2_pin  = in2;
 }
 
 // Set The Starting Parameters
-void FABLAB_L298_Driver::begin() {
+void FablabL298Driver::begin() {
 	pinMode(_ena_pin, OUTPUT);
 	pinMode(_in1_pin, OUTPUT);
 	pinMode(_in2_pin, OUTPUT);
@@ -26,7 +26,7 @@ void FABLAB_L298_Driver::begin() {
 }
 
 // To Check The Value Before Writing To the Motor
-void FABLAB_L298_Driver::checkWrite(uint8_t value) {
+void FablabL298Driver::checkWrite(uint8_t value) {
 	if(_speed != value) {
 		_speed = value;
 		analogWrite(_ena_pin, _speed);
@@ -34,22 +34,22 @@ void FABLAB_L298_Driver::checkWrite(uint8_t value) {
 }
 
 // Set Minimum Speed
-void FABLAB_L298_Driver::setMin(uint8_t value) {
+void FablabL298Driver::setMin(uint8_t value) {
 	_min_speed = value;
 }
 
 // Set Maximum Speed
-void FABLAB_L298_Driver::setMax(uint8_t value) {
+void FablabL298Driver::setMax(uint8_t value) {
 	_max_speed = value;
 }
 
 // Invert Motor Direction
-void FABLAB_L298_Driver::invert() {
+void FablabL298Driver::invert() {
 	_invert = !_invert;
 }
 
 // Move Forword
-void FABLAB_L298_Driver::forward() {
+void FablabL298Driver::forward() {
 	if(_invert == false) {
 		digitalWrite(_in1_pin, LOW);
 		digitalWrite(_in2_pin, HIGH);
@@ -60,7 +60,7 @@ void FABLAB_L298_Driver::forward() {
 }
 
 // Move Backword
-void FABLAB_L298_Driver::backward() {
+void FablabL298Driver::backward() {
 	if(_invert == false) {
 		digitalWrite(_in1_pin, HIGH);
 		digitalWrite(_in2_pin, LOW);
@@ -71,17 +71,17 @@ void FABLAB_L298_Driver::backward() {
 }
 
 // Motor Speed
-void FABLAB_L298_Driver::goMin() {
+void FablabL298Driver::goMin() {
 	checkWrite(_min_speed);
 }
 
 // Motor Speed
-void FABLAB_L298_Driver::goMax() {
+void FablabL298Driver::goMax() {
 	checkWrite(_max_speed);
 }
 
 // Motor Speed
-void FABLAB_L298_Driver::goSpeed(uint8_t speed) {
+void FablabL298Driver::goSpeed(uint8_t speed) {
 	// Make Sure You Are Between The Limits
 	speed = constrain(speed, _min_speed, _max_speed);
 	// Analog 
@@ -89,7 +89,7 @@ void FABLAB_L298_Driver::goSpeed(uint8_t speed) {
 }
 
 // Motor Speed
-void FABLAB_L298_Driver::goPercentage(uint8_t percentage) {
+void FablabL298Driver::goPercentage(uint8_t percentage) {
 	// Stop The Motor
 	if(percentage == 0) {
 		// Stops the Motor
@@ -102,18 +102,18 @@ void FABLAB_L298_Driver::goPercentage(uint8_t percentage) {
 }
 
 // Motor Speed
-void FABLAB_L298_Driver::goOverride(uint8_t value) {
+void FablabL298Driver::goOverride(uint8_t value) {
 	// Stop The Motor
 	analogWrite(_ena_pin, value);
 }
 
 // Press Break
-void FABLAB_L298_Driver::stop() {
+void FablabL298Driver::stop() {
 	checkWrite(0);
 }
 
 // Command By Serial
-unsigned int FABLAB_L298_Driver::command(Stream &serial) {
+unsigned int FablabL298Driver::command(Stream &serial) {
 
 	// Data Buffer
 	unsigned int lastTriedValue = 0;

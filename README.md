@@ -31,7 +31,7 @@ To use the Motor library in your Arduino sketch, you need to include the `Fablab
 Then, create a new instance of the Motor class and specify the pins used to control the motor:
 
 ```c++
-FABLAB_L298_Driver motor(ena_pin, in1_pin, in2_pin);
+FablabL298Driver motor(ena_pin, in1_pin, in2_pin);
 ```
 
 Replace `ena_pin`, `in1_pin`, and `in2_pin` with the actual pin numbers you are using.
@@ -162,7 +162,7 @@ const uint8_t IN1_PIN = 6;
 const uint8_t IN2_PIN = 7;
 
 // Create a new instance of the Motor class
-FABLAB_L298_Driver motor(ENA_PIN, IN1_PIN, IN2_PIN);
+FablabL298Driver motor(ENA_PIN, IN1_PIN, IN2_PIN);
 
 void setup() {
   // Initialize the motor

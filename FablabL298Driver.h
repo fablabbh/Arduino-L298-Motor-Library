@@ -4,11 +4,11 @@
 	MIT licensed.
 */
 
-#ifndef FABLAB_L298_Driver_h
-#define FABLAB_L298_Driver_h
+#ifndef FablabL298Driver_h
+#define FablabL298Driver_h
 #include "Arduino.h"
 
-class FABLAB_L298_Driver {
+class FablabL298Driver {
 
 private:
 
