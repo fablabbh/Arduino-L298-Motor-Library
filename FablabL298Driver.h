@@ -31,7 +31,7 @@ private:
 public:
 
 	// Constructor With Parameter
-	FABLAB_L298_Driver(uint8_t enable, uint8_t in1, uint8_t in2);
+	FablabL298Driver(uint8_t enable, uint8_t in1, uint8_t in2);
 
 	// Set The Starting Parameters
 	void begin();

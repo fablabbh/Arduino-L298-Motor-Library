@@ -8,7 +8,7 @@
 #include <Arduino.h>
 
 // Constructor With Parameter
-FablabL298Driver::FABLAB_L298_Driver(uint8_t enable, uint8_t in1, uint8_t in2) {
+FablabL298Driver::FablabL298Driver(uint8_t enable, uint8_t in1, uint8_t in2) {
 	_ena_pin  = enable;
 	_in1_pin  = in1;
 	_in2_pin  = in2;
